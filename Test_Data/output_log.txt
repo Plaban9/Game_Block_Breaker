@@ -1,0 +1,94 @@
+Initialize engine version: 4.6.9f1 (44099fd26189)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 960M (ID=0x139b)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\plaba\Desktop\Study\Game Development\Projects\Block_Breaker\Test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\plaba\Desktop\Study\Game Development\Projects\Block_Breaker\Test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\plaba\Desktop\Study\Game Development\Projects\Block_Breaker\Test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\plaba\Desktop\Study\Game Development\Projects\Block_Breaker\Test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\plaba\Desktop\Study\Game Development\Projects\Block_Breaker\Test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\plaba\Desktop\Study\Game Development\Projects\Block_Breaker\Test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.133 seconds
+desktop: 1600x900 60Hz; virtual: 3520x1080 at 0,-173
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: C:\Users\plaba\Desktop\Study\Game Development\Projects\Block_Breaker\Test_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\plaba\Desktop\Study\Game Development\Projects\Block_Breaker\Test_Data\Managed\System.dll (this message is harmless)
+Music Player Awake 10164
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+Music Player Start 10164
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+Level load requested for Level_01
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+UnloadTime: 4.344418 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 587.
+Total: 0.788662 ms (FindLiveObjects: 0.023401 ms CreateObjectMapping: 0.011905 ms MarkObjects: 0.173661 ms  DeleteObjects: 0.004516 ms)
+
+Bricks Left: 48
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+Bricks Left: 47
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+Bricks Left: 46
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+Bricks Left: 46
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+Bricks Left: 45
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+Bricks Left: 44
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+Level load requested for Lose
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+UnloadTime: 0.879393 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 137 unused Assets to reduce memory usage. Loaded Objects now: 169.
+Total: 0.850244 ms (FindLiveObjects: 0.009853 ms CreateObjectMapping: 0.009032 ms MarkObjects: 0.135480 ms  DeleteObjects: 0.168324 ms)
+
+Level load requested for Start
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+UnloadTime: 0.327617 ms
+Music Player Awake 11350
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+Duplicate Music Player Destroyed
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 197.
+Total: 0.792768 ms (FindLiveObjects: 0.010263 ms CreateObjectMapping: 0.012726 ms MarkObjects: 0.166682 ms  DeleteObjects: 0.007800 ms)
+
+Exit Requested LevelManager
+ 
+(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+

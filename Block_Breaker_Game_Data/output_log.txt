@@ -1,0 +1,18 @@
+Initialize engine version: 4.6.9f1 (44099fd26189)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 960M (ID=0x139b)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\plaba\Desktop\Study\Game Development\Projects\Block_Breaker\Block_Breaker_Game_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\plaba\Desktop\Study\Game Development\Projects\Block_Breaker\Block_Breaker_Game_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\plaba\Desktop\Study\Game Development\Projects\Block_Breaker\Block_Breaker_Game_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\plaba\Desktop\Study\Game Development\Projects\Block_Breaker\Block_Breaker_Game_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\plaba\Desktop\Study\Game Development\Projects\Block_Breaker\Block_Breaker_Game_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\plaba\Desktop\Study\Game Development\Projects\Block_Breaker\Block_Breaker_Game_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.307 seconds
+desktop: 1600x900 60Hz; virtual: 3520x1080 at 0,-173
+<RI> Initializing input.
+<RI> Input initialized.
