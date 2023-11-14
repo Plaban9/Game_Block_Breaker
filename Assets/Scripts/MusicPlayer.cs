@@ -29,12 +29,12 @@ public class MusicPlayer : MonoBehaviour
 	void Start () 
 	{
 		Debug.Log("Music Player Start " + GetInstanceID());
-		gameObject.audio.volume = musicVolume;
+		gameObject.GetComponent<AudioSource>().volume = musicVolume;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		gameObject.audio.volume = musicVolume;
+		gameObject.GetComponent<AudioSource>().volume = musicVolume;
 	}
 }
