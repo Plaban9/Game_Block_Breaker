@@ -32,7 +32,9 @@ Transform:
   m_LocalPosition: {x: -0.5, y: -5.249, z: -0.75}
   m_LocalScale: {x: 1, y: 1.75, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8343873542623951294}
+  - {fileID: 8655378041993414002}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &21203932
@@ -129,8 +131,14 @@ MonoBehaviour:
   minX: -0.46
   maxX: 16.5
   hitSound: {fileID: 8300000, guid: 39c7eb1397434df4595fb5aa5731b1c3, type: 3}
-  _magnitude: 12.5
+  _magnitude: 17.5
   isKeyboardMovement: 1
+  _turretPaddleSprite: {fileID: 676242615, guid: ba21cc7a0a5d3e346a13539cd7ce280b,
+    type: 3}
+  _bullets: {fileID: 0}
+  _leftBulletSpawn: {fileID: 8343873542623951294}
+  _rightBulletSpawn: {fileID: 8655378041993414002}
+  _hasSizeIncreased: 0
 --- !u!60 &6086770
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -184,3 +192,65 @@ PolygonCollider2D:
       - {x: -1.4702574, y: -0.17421055}
       - {x: 1.485521, y: -0.17528248}
   m_UseDelaunayMesh: 0
+--- !u!1 &4021923011676402815
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8343873542623951294}
+  m_Layer: 0
+  m_Name: LeftTurret
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8343873542623951294
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4021923011676402815}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.34, y: 0.697, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 403932}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6026218699685591461
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8655378041993414002}
+  m_Layer: 0
+  m_Name: RightTurret
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8655378041993414002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6026218699685591461}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.33, y: 0.68, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 403932}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

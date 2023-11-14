@@ -25,6 +25,11 @@ public class Brick : MonoBehaviour
     public const int BRICK_DESTROY_SCORE = 50;
     public const int ALL_BRICK_DESTROY_SCORE = 100;
 
+    [SerializeField]
+    private GameObject _increaseSizePowerUp;
+    [SerializeField]
+    private GameObject _bulletPowerUp;
+
     // Use this for initialization
     void Start()
     {
@@ -44,6 +49,19 @@ public class Brick : MonoBehaviour
     void Update()
     {
         //OnCollisionEnter2D();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Bullet"))
+        {
+            Destroy(collision.gameObject);
+
+            if (isBreakable)
+            {
+                HandleHits();
+            }
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -75,6 +93,7 @@ public class Brick : MonoBehaviour
             if (ScoreManager.Instance != null)
                 ScoreManager.Instance.AddScore(BRICK_DESTROY_SCORE);
             levelManager.BrickDestroyed();
+            SpawnPowerUp();
             Destroy(gameObject);
         }
 
@@ -97,6 +116,30 @@ public class Brick : MonoBehaviour
         }
 
         print("Bricks Left: " + numBreakableBricks);
+    }
+
+    private void SpawnPowerUp()
+    {
+        int chance = UnityEngine.Random.Range(0, 101);
+
+        if (chance < 20) // 20% chance
+        {
+            GameObject spawnedObject = null;
+
+            switch (UnityEngine.Random.Range(0, 2))
+            {
+                case 0:
+                    spawnedObject = Instantiate(_increaseSizePowerUp);
+
+                    break;
+
+                case 1:
+                    spawnedObject = Instantiate(_bulletPowerUp);
+                    break;
+            }
+
+            spawnedObject.transform.position = this.transform.position;
+        }
     }
 
     void LoadSprites()

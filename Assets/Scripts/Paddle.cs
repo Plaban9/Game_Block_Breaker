@@ -25,26 +25,60 @@ public class Paddle : MonoBehaviour
     [SerializeField]
     private bool isKeyboardMovement = false;
 
+    private Vector3 _initialScale;
+    private bool _isInTurretMode;
+    private int _currentBullets;
+    [SerializeField]
+    private Sprite _turretPaddleSprite;
+    private Sprite _defaultSprite;
+    [SerializeField]
+    private GameObject _bullets;
+
+    [SerializeField]
+    private Transform _leftBulletSpawn;
+    [SerializeField]
+    private Transform _rightBulletSpawn;
+
+    [SerializeField]
+    private bool _hasSizeIncreased;
+
     private void Awake()
     {
         if (isKeyboardMovement)
         {
             paddlePosition = this.transform.position;
         }
+
+        _initialScale = this.transform.localScale;
+        _isInTurretMode = false;
+        _hasSizeIncreased = false;
+        _currentBullets = 0;
+        _defaultSprite = GetComponent<SpriteRenderer>().sprite;
     }
 
     // Use this for initialization
     void Start()
     {
         //paddlePosition = this.transform.position;
-        ball = GameObject.FindObjectOfType<Ball>();
+        ball = FindObjectOfType<Ball>();
         sfxVolume = MusicPlayer.sfxVolume;
-
     }
 
     // Update is called once per frame
     void Update()
     {
+#if DEBUG
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            HandlePowerUp(PowerUpType.ATTACH_GUN);
+        }
+        else if (Input.GetKeyDown(KeyCode.I))
+        {
+            HandlePowerUp(PowerUpType.INCREASE_SIZE);
+        }
+#endif
+
+        HandleTurret();
         if (isSimulation)
         {
             // For Testing
@@ -58,6 +92,29 @@ public class Paddle : MonoBehaviour
         {
             mousePositionX = (Input.mousePosition.x / Screen.width) * 16;
             MoveWithMouse();
+        }
+    }
+
+    private void HandleTurret()
+    {
+        if (_isInTurretMode)
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                if (_currentBullets > 0)
+                {
+                    _currentBullets--;
+
+                    Instantiate(_bullets, _leftBulletSpawn.position, Quaternion.identity, null);
+                    Instantiate(_bullets, _rightBulletSpawn.position, Quaternion.identity, null);
+
+                }
+                else
+                {
+                    _isInTurretMode = true;
+                    GetComponent<SpriteRenderer>().sprite = _defaultSprite;
+                }
+            }
         }
     }
 
@@ -86,6 +143,53 @@ public class Paddle : MonoBehaviour
         if (ball.GetLaunchStatus())
         {
             AudioSource.PlayClipAtPoint(hitSound, transform.position, sfxVolume);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PowerUp"))
+        {
+            HandlePowerUp(collision.transform.GetComponent<PowerType>().PowerUpType);
+            Destroy(collision.gameObject);
+        }
+    }
+
+    private void HandlePowerUp(PowerUpType powerUpType)
+    {
+        switch (powerUpType)
+        {
+            case PowerUpType.INCREASE_SIZE:
+                if (!_hasSizeIncreased)
+                    StartCoroutine(nameof(IncreaseSizePowerUp), 10f);
+                break;
+            case PowerUpType.ATTACH_GUN:
+                EnableTurret();
+                break;
+        }
+    }
+
+    private IEnumerator IncreaseSizePowerUp(float duration)
+    {
+        transform.localScale = new Vector3(transform.localScale.x * 1.25f, transform.localScale.y, transform.localScale.z);
+        _hasSizeIncreased = true;
+        yield return new WaitForSeconds(duration);
+        _hasSizeIncreased = false;
+        transform.localScale = _initialScale;
+    }
+
+    private void EnableTurret()
+    {
+        if (_isInTurretMode)
+        {
+            _isInTurretMode = true;
+            _currentBullets += 10;
+        }
+        else
+        {
+            _isInTurretMode = true;
+            _currentBullets = 10;
+            GetComponent<SpriteRenderer>().sprite = _turretPaddleSprite;
         }
     }
 }

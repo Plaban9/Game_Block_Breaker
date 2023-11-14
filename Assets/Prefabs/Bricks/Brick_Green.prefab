@@ -148,6 +148,10 @@ MonoBehaviour:
   hitSound: {fileID: 8300000, guid: d7e399f4930ffab499e76960aa6e28fb, type: 3}
   destroySound: {fileID: 8300000, guid: 393022580cc8f2241a9e9dc912133132, type: 3}
   particleEmission: {fileID: 153354, guid: 410b27f9c439fb945ab475308f7ad157, type: 3}
+  _increaseSizePowerUp: {fileID: 3058548984820140086, guid: 983308ebaf31b364e8af4c1af4221112,
+    type: 3}
+  _bulletPowerUp: {fileID: 8572359908198561518, guid: bf44dcccf7a713b4b9c3a1d4d1fe3009,
+    type: 3}
 --- !u!114 &364465209502513189
 MonoBehaviour:
   m_ObjectHideFlags: 0
