@@ -42,6 +42,9 @@ public class Paddle : MonoBehaviour
     [SerializeField]
     private bool _hasSizeIncreased;
 
+    [SerializeField]
+    private bool _isTopTurret;
+
     private void Awake()
     {
         if (isKeyboardMovement)
@@ -68,13 +71,16 @@ public class Paddle : MonoBehaviour
     void Update()
     {
 #if DEBUG
-        if (Input.GetKeyDown(KeyCode.T))
+        if (!_isTopTurret)
         {
-            HandlePowerUp(PowerUpType.ATTACH_GUN);
-        }
-        else if (Input.GetKeyDown(KeyCode.I))
-        {
-            HandlePowerUp(PowerUpType.INCREASE_SIZE);
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                HandlePowerUp(PowerUpType.ATTACH_GUN);
+            }
+            else if (Input.GetKeyDown(KeyCode.I))
+            {
+                HandlePowerUp(PowerUpType.INCREASE_SIZE);
+            }
         }
 #endif
 
@@ -97,6 +103,9 @@ public class Paddle : MonoBehaviour
 
     private void HandleTurret()
     {
+        if (_isTopTurret)
+            return;
+
         if (_isInTurretMode)
         {
             if (Input.GetButtonDown("Fire1"))
@@ -157,6 +166,9 @@ public class Paddle : MonoBehaviour
 
     private void HandlePowerUp(PowerUpType powerUpType)
     {
+        if (_isTopTurret)
+            return;
+
         switch (powerUpType)
         {
             case PowerUpType.INCREASE_SIZE:

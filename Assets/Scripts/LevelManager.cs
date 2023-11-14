@@ -1,5 +1,7 @@
 ﻿using Managers;
 
+using System.Collections;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,12 +18,31 @@ public class LevelManager : MonoBehaviour
 	
 	}*/
 
+    [SerializeField]
+    private Animator _loadAnimator;
+
     public void LoadLevel(string name)
     {
+        StartCoroutine(nameof(LoadLevelCoroutine), name);
+    }
+
+    private IEnumerator LoadLevelCoroutine(string name)
+    {
+        _loadAnimator.SetTrigger("exit");
+        yield return new WaitForSeconds(2.1f);
         Debug.Log("Level load requested for " + name);
         Brick.numBreakableBricks = 0;
         LoseCollider.lifeCounter = 3;
         SceneManager.LoadScene(name);
+    }
+
+    private IEnumerator LoadLevelCoroutine(float delay)
+    {
+        _loadAnimator.SetTrigger("exit");
+        yield return new WaitForSeconds(delay);
+
+        Brick.numBreakableBricks = 0;
+        SceneManager.LoadScene(Application.loadedLevel + 1);
     }
 
     public void LoadNextLevel()

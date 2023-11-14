@@ -135,10 +135,12 @@ MonoBehaviour:
   isKeyboardMovement: 1
   _turretPaddleSprite: {fileID: 676242615, guid: ba21cc7a0a5d3e346a13539cd7ce280b,
     type: 3}
-  _bullets: {fileID: 0}
+  _bullets: {fileID: 1252974014375292411, guid: 19c4a3dc3de96204e8540bb749f745bb,
+    type: 3}
   _leftBulletSpawn: {fileID: 8343873542623951294}
   _rightBulletSpawn: {fileID: 8655378041993414002}
   _hasSizeIncreased: 0
+  _isTopTurret: 0
 --- !u!60 &6086770
 PolygonCollider2D:
   m_ObjectHideFlags: 0
