@@ -45,6 +45,12 @@ public class Paddle : MonoBehaviour
     [SerializeField]
     private bool _isTopTurret;
 
+    [SerializeField]
+    private AudioClip _gunPowerUpCollected;
+
+    [SerializeField]
+    private AudioClip _lengthPowerUpCollected;
+
     private void Awake()
     {
         if (isKeyboardMovement)
@@ -120,7 +126,7 @@ public class Paddle : MonoBehaviour
                 }
                 else
                 {
-                    _isInTurretMode = true;
+                    _isInTurretMode = false;
                     GetComponent<SpriteRenderer>().sprite = _defaultSprite;
                 }
             }
@@ -173,9 +179,20 @@ public class Paddle : MonoBehaviour
         {
             case PowerUpType.INCREASE_SIZE:
                 if (!_hasSizeIncreased)
+                {
+                    if (_lengthPowerUpCollected != null)
+                    {
+                        AudioSource.PlayClipAtPoint(_lengthPowerUpCollected, transform.position);
+                    }
+
                     StartCoroutine(nameof(IncreaseSizePowerUp), 10f);
+                }
                 break;
             case PowerUpType.ATTACH_GUN:
+                if (_gunPowerUpCollected != null)
+                {
+                    AudioSource.PlayClipAtPoint(_gunPowerUpCollected, transform.position);
+                }
                 EnableTurret();
                 break;
         }
@@ -196,6 +213,7 @@ public class Paddle : MonoBehaviour
         {
             _isInTurretMode = true;
             _currentBullets += 10;
+            GetComponent<SpriteRenderer>().sprite = _turretPaddleSprite;
         }
         else
         {

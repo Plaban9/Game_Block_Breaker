@@ -63,7 +63,8 @@ public class LevelManager : MonoBehaviour
         {
             if (ScoreManager.Instance != null)
                 ScoreManager.Instance.AddScore(Brick.ALL_BRICK_DESTROY_SCORE);
-            LoadNextLevel();
+
+            StartCoroutine(nameof(LoadLevelCoroutine), 2f);
         }
     }
 }

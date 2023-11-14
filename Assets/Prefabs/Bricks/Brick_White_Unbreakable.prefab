@@ -148,6 +148,9 @@ MonoBehaviour:
   hitSound: {fileID: 8300000, guid: 8778bfa057e7cd94f84c4db65429c871, type: 3}
   destroySound: {fileID: 8300000, guid: 8778bfa057e7cd94f84c4db65429c871, type: 3}
   particleEmission: {fileID: 153354, guid: 410b27f9c439fb945ab475308f7ad157, type: 3}
+  _increaseSizePowerUp: {fileID: 0}
+  _bulletPowerUp: {fileID: 0}
+  _spawnPowerUpClip: {fileID: 8300000, guid: 4caf3541243805e4cb726100fc52684c, type: 3}
 --- !u!114 &3961309992695004815
 MonoBehaviour:
   m_ObjectHideFlags: 0

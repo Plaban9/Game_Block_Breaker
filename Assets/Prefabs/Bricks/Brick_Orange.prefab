@@ -155,6 +155,7 @@ MonoBehaviour:
     type: 3}
   _bulletPowerUp: {fileID: 8572359908198561518, guid: bf44dcccf7a713b4b9c3a1d4d1fe3009,
     type: 3}
+  _spawnPowerUpClip: {fileID: 8300000, guid: 4caf3541243805e4cb726100fc52684c, type: 3}
 --- !u!114 &5437508484046080693
 MonoBehaviour:
   m_ObjectHideFlags: 0

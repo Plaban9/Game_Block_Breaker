@@ -141,6 +141,10 @@ MonoBehaviour:
   _rightBulletSpawn: {fileID: 8655378041993414002}
   _hasSizeIncreased: 0
   _isTopTurret: 0
+  _gunPowerUpCollected: {fileID: 8300000, guid: 514d61334217c3a4d8fecb6ec17b33cb,
+    type: 3}
+  _lengthPowerUpCollected: {fileID: 8300000, guid: b161212973bf29f41879bae75ffa60b2,
+    type: 3}
 --- !u!60 &6086770
 PolygonCollider2D:
   m_ObjectHideFlags: 0

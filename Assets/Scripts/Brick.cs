@@ -30,6 +30,9 @@ public class Brick : MonoBehaviour
     [SerializeField]
     private GameObject _bulletPowerUp;
 
+    [SerializeField]
+    AudioClip _spawnPowerUpClip;
+
     // Use this for initialization
     void Start()
     {
@@ -126,6 +129,11 @@ public class Brick : MonoBehaviour
         {
             GameObject spawnedObject = null;
 
+            if (_spawnPowerUpClip != null)
+            {
+                AudioSource.PlayClipAtPoint(_spawnPowerUpClip, transform.position);
+            }
+            
             switch (UnityEngine.Random.Range(0, 2))
             {
                 case 0:
