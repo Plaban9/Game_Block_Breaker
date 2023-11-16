@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using Managers.Audio;
 
 public class SliderEvent : MonoBehaviour 
 {
@@ -34,7 +35,7 @@ public class SliderEvent : MonoBehaviour
 		}
 		
 		MusicPlayer.sfxVolume = sfxSlider.value;
-	}
+		}
 	
 	void SetMusicVolume()
 	{
@@ -44,5 +45,7 @@ public class SliderEvent : MonoBehaviour
 		}
 		
 		MusicPlayer.musicVolume = musicSlider.value;
-	}
+        MusicManager.Instance.MaxVolume = musicSlider.value;
+
+    }
 }

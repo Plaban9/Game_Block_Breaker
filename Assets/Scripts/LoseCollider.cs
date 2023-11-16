@@ -22,7 +22,19 @@ public class LoseCollider : MonoBehaviour
 			
 	void OnTriggerEnter2D (Collider2D triggerObject)
 	{
-		if (lifeCounter > 1)
+        if (triggerObject.CompareTag("Bullet") || triggerObject.CompareTag("PowerUp"))
+        {
+            Destroy(triggerObject.gameObject);
+			return;
+        }
+
+        //if (triggerObject.CompareTag("PowerUp"))
+        //{
+        //    Destroy(triggerObject.gameObject);
+        //    return;
+        //}
+
+        if (lifeCounter > 1)
 		{
 			AudioSource.PlayClipAtPoint( destroySound, transform.position, sfxVolume);
 			--lifeCounter;
